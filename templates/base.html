@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-List Todo</title>
+    <style>
+        :root { --primary: #6366f1; --bg: #f3f4f6; --text: #1f2937; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: var(--bg); color: var(--text); padding: 20px; }
+        .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        h1 { margin-top: 0; color: var(--primary); }
+        nav { text-align: right; margin-bottom: 15px; font-size: 0.9rem; }
+        input[type="text"], input[type="password"] { flex-grow: 1; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 1rem; }
+        button { background: var(--primary); color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: opacity 0.2s; }
+        button:hover { opacity: 0.9; }
+        .btn-delete { background: #ef4444; padding: 5px 10px; }
+        .card { display: flex; justify-content: space-between; align-items: center; padding: 15px; border: 1px solid #e5e7eb; border-radius: 10px; margin-bottom: 10px; background: #fff; }
+        .card a { text-decoration: none; color: inherit; font-weight: 500; font-size: 1.1rem; }
+        ul { list-style: none; padding: 0; }
+        li { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #f3f4f6; }
+        .done { text-decoration: line-through; color: #9ca3af; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

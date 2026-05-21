@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+    <nav><a href="/logout">Logout</a></nav>
+    <h1>My Todo Lists</h1>
+    
+    <form method="post" action="/lists/add" style="display: flex; gap: 10px; margin-bottom: 20px;">
+        <input type="text" name="title" placeholder="List Title (e.g. Work, Shopping)" required>
+        <button type="submit">Create List</button>
+    </form>
+
+    <div class="list-grid">
+        {% for lst in user.lists %}
+        <div class="card">
+            <a href="/lists/{{ lst.id }}">📂 {{ lst.title }}</a>
+            <form method="post" action="/lists/{{ lst.id }}/delete" style="margin: 0;">
+                <button type="submit" class="btn-delete">🗑️</button>
+            </form>
+        </div>
+        {% else %}
+            <p>You haven't created any lists yet.</p>
+        {% endfor %}
+    </div>
+{% endblock %}
